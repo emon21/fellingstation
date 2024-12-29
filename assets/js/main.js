@@ -6,8 +6,81 @@
  * License: https://bootstrapmade.com/license/
  */
 
+
+// $(document).ready(function () {
+//   // When a link in the list is clicked
+//   $("ul li a").click(function () {
+//    // e.preventDefault(); // Prevent the default anchor behavior
+//     // Remove and add 'active' class to 'menu'
+//     $("li a").removeClass("active");
+//     $(this).addClass("active");
+//   });
+// });
+
+//  $(document).ready(function () {
+//    // Get the current page URL
+//    var currentUrl = window.location.pathname;
+//   //  console.log(currentUrl);
+   
+//    // Remove the active class from all links
+//    $("nav ul li a").removeClass("active");
+
+//    // Add the active class to the link that corresponds to the current page
+//    $("nav ul li a").each(function () {
+//      if ($(this).attr("href") === currentUrl) {
+//        $(this).addClass("active");
+//      }
+//    });
+//  });
+
+
+// $(document).ready(function () {
+//   $("ul li a").click(function (e) {
+//     e.preventDefault(); // Prevent the default action (optional if links navigate)
+
+//     // Remove 'active' class from all links
+//     $("ul li a").removeClass("active");
+
+//     // Add 'active' class to the clicked link
+//     $(this).addClass("active");
+
+//     // Optionally navigate to the href
+//     window.location.href = $(this).attr("href");
+//   });
+// });
+
+// Menu active in another page visit
+const activePage = window.location.pathname;
+const navLinks = document.querySelectorAll("nav ul li a").forEach((link) => {
+  if (link.href.includes(`${activePage}`)) {
+    link.classList.add("active");
+  }
+});
+
+
+// $(document).ready(function () {
+//   $("ul li a").click(function () {
+//     $("li a").removeClass("active");
+//     $(this).addClass("active");
+//   });
+// });
+
 (function () {
-  "use strict";
+  ("use strict");
+
+  // Menu Active
+  // var menus = document.getElementById("navmenu");
+
+  // var btns = menus.getElementsByClassName("btn");
+  // // console.log("hi" + menus + "btn name" + btns);
+
+  // for (var i = 0; i < btns.length; i++) {
+  //   btns[i].addEventListener("click", function () {
+  //     var current = document.getElementsByClassName("active");
+  //     current[0].className = current[0].className.replace(" active", "");
+  //     this.className += " active";
+  //   });
+  // }
 
   /**
    * Apply .scrolled class to the body as the page is scrolled down
@@ -193,9 +266,9 @@
     cssMode: true,
     slidesPerView: 1,
     loop: true,
-    // autoplay: {
-    //   delay: 2500,
-    // },
+    autoplay: {
+      delay: 2500,
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
