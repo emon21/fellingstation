@@ -6,7 +6,6 @@
  * License: https://bootstrapmade.com/license/
  */
 
-
 // $(document).ready(function () {
 //   // When a link in the list is clicked
 //   $("ul li a").click(function () {
@@ -21,7 +20,7 @@
 //    // Get the current page URL
 //    var currentUrl = window.location.pathname;
 //   //  console.log(currentUrl);
-   
+
 //    // Remove the active class from all links
 //    $("nav ul li a").removeClass("active");
 
@@ -32,7 +31,6 @@
 //      }
 //    });
 //  });
-
 
 // $(document).ready(function () {
 //   $("ul li a").click(function (e) {
@@ -49,25 +47,46 @@
 //   });
 // });
 
+
+
 // Menu active in another page visit
-const activePage = window.location.pathname;
-const url = window.location.href;
+const url = window.location;
 // console.log(url);
-if (activePage === "/") {
-  console.log("home");
-  
-} else {
+// let urlnew = url.replace+"index.html";
+// console.log(urlnew);
 
-  const navLinks = document.querySelectorAll("nav ul li a").forEach((link) => {
-    if (link.href.includes(`${activePage}`)) {
-      link.classList.add("active");
-    }
-  });
-  
-}
+// if (url !== activePage) {
+//   console.log("no");
+// } else {
+//   console.log("yes");
+// }
 
 
+// var path = "https://www.youtube.com/";
 
+// var linkurl = document.getElementsByTagName(path).setAttribute("href", "https://google.com/");
+
+// console.log(linkurl);
+ //  if (url === activePage) {
+    //    console.log("no");
+    //    link.removeClass("active");
+    //  } else {
+    //   //  console.log("yes");
+    //      link.classList("active");
+    //    // link.removeClass("active");
+//  }
+    
+
+const activePage = window.location.pathname;
+const navLinks = document.querySelectorAll("nav ul li a").forEach((link) => {
+  if (link.href.includes(`${activePage}`)) {
+     if (url == activePage && link.classList.contains("active")) {
+       link.classList.remove("active");
+     }
+     link.classList.add("active");
+    
+  }
+});
 
 // $(document).ready(function () {
 //   $("ul li a").click(function () {
