@@ -51,11 +51,22 @@
 
 // Menu active in another page visit
 const activePage = window.location.pathname;
-const navLinks = document.querySelectorAll("nav ul li a").forEach((link) => {
-  if (link.href.includes(`${activePage}`)) {
-    link.classList.add("active");
-  }
-});
+const url = window.location.href;
+// console.log(url);
+if (activePage === "/") {
+  console.log("home");
+  
+} else {
+
+  const navLinks = document.querySelectorAll("nav ul li a").forEach((link) => {
+    if (link.href.includes(`${activePage}`)) {
+      link.classList.add("active");
+    }
+  });
+  
+}
+
+
 
 
 // $(document).ready(function () {
